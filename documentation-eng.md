@@ -9,7 +9,16 @@ as three modules of addition information aiming to investigate in toto the 'What
 
 # WHAT
 ## Items 
+
+
 ## Citations
+Citations (Canonical Citations) has been modelled through the use of hucit.  
+
+Example in natural language: "The passage "Eneide, IV, 362-392" refers to the abandon of Dido By Eneas". 
+
+![image info](datamodel-imgs/what-citations.png)
+
+
 ## Works
 ## Conceptual Categories
 
