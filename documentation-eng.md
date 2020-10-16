@@ -8,17 +8,23 @@ In particular, the 'What' dimension represents how citations mentioning works an
 as three modules of addition information aiming to investigate in toto the 'What' dimension. 
 
 # WHAT
-## Items 
-
+## Items
+Items have been modelled with FRBRoo and dcterms. 
+Example: The figure below expresses the the item 775 and its metadata, along with its conceptual aspect which represents Teseus.    
+![image info](datamodel-imgs/what-items.svg)
 
 ## Citations
 Citations (Canonical Citations) has been modelled through the use of hucit.  
 
 Example in natural language: "The passage "Eneide, IV, 362-392" refers to the abandon of Dido By Eneas". 
-
 ![image info](datamodel-imgs/what-citations.svg)
 
 
 ## Works
+Works have been modelled with FRBRoo. 
+Example in natural language: "In "Rime" by Francesco Petrarca is take up the figure oF Arianna, princess of Cnosso"
+![image info](datamodel-imgs/what-works.svg)
+
 ## Conceptual Categories
+
 
