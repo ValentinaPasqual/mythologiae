@@ -7,6 +7,21 @@ For the sake of simplicity, Mythologiae Datamodel has been tested in modules. Th
 In particular, the 'What' dimension represents how citations mentioning works and items are linked together through the use of conceptual categories. 'When', 'Where' and 'Who' can be seen 
 as three modules of addition information aiming to investigate in toto the 'What' dimension. 
 
+Approach to datamodelling activity:
+* Design of the domain
+* input csv cleaning into computable python format to generate rdf
+* Competency questions for each of the modules (WHAT, WHERE, WHO, WHEN) and submodules (WHAT: items, works, citations, conceptual categories)
+* refactorization of concepts in triple-fashion using existing ontologies
+* data alignement with external sources (e.g. Perseus, VIAF)
+* conversion of input csv in python format into rdf (with rdf lib) following the chosen ontologies structures
+* manual checking of entities (e.g. URIs consistency, doubles elimination)
+* perfomation of queries to find errors in data production (e.g. missing properties between individuals)
+* performation of CQs to test datamodel and dataset representational requirements
+* again, automatic, semiautomatic and manual adjustment of data
+
+This process has been performed sequentially and on each module and submodule.
+
+
 # WHAT
 ## Items
 Items have been modelled with FRBRoo and dcterms. 
