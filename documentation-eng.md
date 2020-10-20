@@ -1,17 +1,16 @@
 # Mythologiae Datamodel 
 
-## Table of Contents
-
+- [Mythologiae Datamodel](#mythologiae-datamodel)
   * [Layered Approach](#layered-approach)
-  * [Layers 0 and 1](#layers-0-and-1)
-    + [WHAT](#what)
-      - [Items](#items)
-      - [Citations](#citations)
-      - [Works](#works)
-      - [Conceptual Categories](#conceptual-categories)
-    + [WHERE](#where)
-    + [WHEN](#when)
-    + [WHO](#who)
+    + [Layers 0 and 1](#layers-0-and-1)
+      - [WHAT](#what)
+        * [Items](#items)
+        * [Citations](#citations)
+        * [Works](#works)
+        * [Conceptual Categories](#conceptual-categories)
+      - [WHERE](#where)
+      - [WHEN](#when)
+      - [WHO](#who)
 
 ## Layered Approach
 
