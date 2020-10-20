@@ -52,6 +52,8 @@ Considering the messy data input, most of the cited works has been slightly diff
 
 # WHERE 
 
+Example in natural language: "Item 81 is currently stored in Altes Museum (Berlin, Germany)". 
+
 ![image info](datamodel-imgs/where-museo-citta-nazione.svg)
 
 
