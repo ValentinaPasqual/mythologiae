@@ -60,3 +60,5 @@ Example in natural language: "Item 81 is currently stored in Altes Museum (Berli
 Example in natural language: "Item 81 has been created between 320 and 340 b.C. (IV century b.C.) and belongs to the Classical era - Greek art".
 ![image info](datamodel-imgs/when-items.svg)
 
+# WHO 
+
