@@ -1,11 +1,15 @@
 # Mythologiae Datamodel 
 
-[img]
+# Layered Approach
 
-Considering the first and second layer of the datamodel (based on mima + paper JLIS)
+(4 livelli blabliablia) + img 
+
+The figure below representslayers 0 and 1 of the datamodel (based on mima + paper JLIS). In particular, all class and properties in the gray zone represent the assertion graph (layer 1) and all the other class and properties in white background represent factual data (layer 0).
+
+![image info](datamodel-imgs/layer0_layer1.svg)  
+
 For the sake of simplicity, Mythologiae Datamodel has been tested in modules. Those modules are named 'What', 'Where', 'When', 'Where' - the four dimensions created by the reuse of an event-centric backbone ontology (FRBRoo). It is worth to underline that this research main interest is to investigate the 'What' dimension, taking into consideration how it interacts with the other three modules. 
-In particular, the 'What' dimension represents how citations mentioning works and items are linked together through the use of conceptual categories. 'When', 'Where' and 'Who' can be seen 
-as three modules of addition information aiming to investigate in toto the 'What' dimension. 
+In particular, the 'What' dimension represents how citations mentioning works and items are linked together through the use of conceptual categories. 'When', 'Where' and 'Who' can be seen as three modules of addition information aiming to investigate in toto the 'What' dimension. 
 
 Approach to datamodelling activity:
 * Design of the domain
