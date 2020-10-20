@@ -30,6 +30,8 @@ Example in natural language: "In "Rime" by Francesco Petrarca is take up the fig
 ![image info](datamodel-imgs/what-works.svg)
 
 URIs identifying works (hucit:Work) follows the strucuture "author name, work name" reconciled against viaf when possible.  
+Reconliciation against VIAF, why is this so important? 
+Considering the messy data input, most of the cited works has been slightly differently recorded as strings in the input csv (e.g. Boccaccio Giovanni --> "Della Genealogia degli dei" oppure "Genalogie Deorum Gentilium Libri" oppure "Genalogie Deorum Gentilium" oppure "Genalogie Deorum"). VIAF reconciliation guarantees to reconduct all this different forms of the same work to a single controlled label (e.g. "Boccaccio, Giovanni, 1313-1375. | Genealogia deorum") and identifier (e.g. 182235138). The controlled label has been reused to create the rdf-dataset internal corresponding URIs (e.g. myth-work:boccaccio-giovanni-genealogie-deorum).
 
 ## Conceptual Categories
 
