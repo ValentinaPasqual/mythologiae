@@ -52,5 +52,6 @@ Considering the messy data input, most of the cited works has been slightly diff
 
 # WHERE 
 
+![image info](datamodel-imgs/where-museo-citta-nazione.svg)
 
 
