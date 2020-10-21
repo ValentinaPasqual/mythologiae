@@ -30,3 +30,17 @@ GROUP BY ?categ ORDER BY DESC (?n_assertion) .
 |13 |http://example.org/categ/venere-e-anchise                                  |1          |
 
 
+CQ2: Quali sono i passi delle Eneide che parlano di Enea nella penisola italica?  --> DA FINIRE
+
+```
+SELECT DISTINCT ?cit ?txEl  
+WHERE {
+  graph ?assertion {?cit ecrm:P67_refers_to <http://example.org/categ/enea-nella-penisola-italica>}  
+  graph myth:factual_data {?categ a ecrm:E1_CRM_Entity. ?assertion a np:Assertion . 
+   ?cit hucit:has_content ?txEl . 
+    ?txStr hucit:is_canonical_structure_of <http://example.org/work/virgil-aeneis>; 
+  			hucit:has_element ?txEl}
+  }
+  
+  ```
+
