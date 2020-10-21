@@ -9,7 +9,9 @@ WHERE {
   graph myth:factual_data { ?categ a ecrm:E1_CRM_Entity. ?assertion a np:Assertion }
 }  
 
-GROUP BY ?categ ORDER BY DESC (?n_assertion) . ```
+GROUP BY ?categ ORDER BY DESC (?n_assertion) . 
+```
+
 
 | # |categ                                                                      |n_assertion|
 |---|---------------------------------------------------------------------------|-----------|
