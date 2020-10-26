@@ -58,4 +58,27 @@ WHERE {
 |http://example.org/cit/42|http://example.org/str/IX-25-175   |
 |http://example.org/cit/40|http://example.org/str/VIII-560-584|
 
+CQ3: Quali sono le 5 citazioni canoniche più citate nel dataset? E per ognuna di esse qual è la categoria che descrivono di più? 
+
+  ```SELECT DISTINCT ?cit ?label (COUNT(?cit) as ?n_cit) (MAX(?categ) as ?max_n_categ) 
+WHERE { 
+  graph ?assertion {?cit ecrm:P67_refers_to ?categ}
+  graph myth:factual_data {?categ a ecrm:E1_CRM_Entity. ?assertion a np:Assertion . 
+   ?cit hucit:has_content ?txEl; 
+        rdfs:label ?label . 
+    ?txStr hucit:is_canonical_structure_of ?work; 
+  			hucit:has_element ?txEl}
+  }
+
+GROUP BY ?cit ?label ORDER BY DESC (?n_cit)  ```
+LIMIT 5
+
+|cit                      |label                              |n_cit|n_categ                                                       |
+|-------------------------|-----------------------------------|-----|--------------------------------------------------------------|
+|http://example.org/cit/20|Eneide,                            |43   |http://example.org/categ/enea-fugge-da-troia                  |
+|http://example.org/cit/54|Publio Ovidio Nasone, Le Metamorfosi, VIII, vv. 176-177|33   |http://example.org/categ/arianna-e-dioniso-sincontrano        |
+|http://example.org/cit/20|Eneide,                            |31   |http://example.org/categ/suicidio-di-didone                   |
+|http://example.org/cit/27|Odissea, X                         |27   |http://example.org/categ/circe                                |
+|http://example.org/cit/27|Odissea, X                         |27   |http://example.org/categ/circe-trasforma-i-compagni-di-odisseo|
+
 
