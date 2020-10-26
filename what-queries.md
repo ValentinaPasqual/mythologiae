@@ -84,4 +84,26 @@ LIMIT 5
 |http://example.org/cit/9 |Eneide                             |20   |http://example.org/categ/venere-e-anchise                     |
 
 
-CQ4: Per quanto riguarda la categoria X, quali sono le sue fonti associate? (a livello di work, così si può lavorare anche con le altre fonti oltre che classiche)
+CQ4: Per quanto riguarda la categoria "Ermes aiuta Odisseo", quali sono le sue fonti associate? E a che tipologia di work appartiene ognuno di essi? (a livello di work, così si può lavorare anche con le altre fonti oltre che classiche)
+
+ ```
+SELECT ?work ?type (COUNT(?work) as ?n_work)
+WHERE { 
+  graph ?assertion {?work ecrm:P67_refers_to <http://example.org/categ/ermes-aiuta-odisseo>}
+  graph myth:factual_data {?work a efrbroo:F1_Work; 
+                                 ecrm:P2_has_type ?type}
+  }
+
+GROUP BY ?work ?type ORDER BY DESC (?n_work)
+ ```
+ 
+|work                                                                     |type                                         |n_work|
+|-------------------------------------------------------------------------|---------------------------------------------|------|
+|http://example.org/work/duran-navarro-rosa-lodissea-raccontata-ai-bambini|http://example.org/work/riscritturaLetteraria|6     |
+|http://example.org/work/work/homer-odyssey                               |http://example.org/work/fonteClassica        |6     |
+
+
+
+CQ5: Quali sono le categorie che compaiono insieme nella stessa asserzione rispetto allo stesso item? 
+
+CQ6: Quali sono le citazioni canoniche che esprimono più di una categoria? 
