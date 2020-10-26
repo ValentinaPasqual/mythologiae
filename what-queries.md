@@ -83,3 +83,5 @@ LIMIT 5
 |http://example.org/cit/61|Odissea, X, vv. 203-243            |28   |http://example.org/categ/ermes-aiuta-odisseo                  |
 |http://example.org/cit/9 |Eneide                             |20   |http://example.org/categ/venere-e-anchise                     |
 
+
+CQ4: Per quanto riguarda la categoria X, quali sono le sue fonti associate? (a livello di work, così si può lavorare anche con le altre fonti oltre che classiche)
