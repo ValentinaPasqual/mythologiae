@@ -70,8 +70,9 @@ WHERE {
   			hucit:has_element ?txEl}
   }
 
-GROUP BY ?cit ?label ORDER BY DESC (?n_cit)  ```
+GROUP BY ?cit ?label ORDER BY DESC (?n_cit) 
 LIMIT 5
+ ```
 
 |cit                      |label                              |n_cit|n_categ                                                       |
 |-------------------------|-----------------------------------|-----|--------------------------------------------------------------|
