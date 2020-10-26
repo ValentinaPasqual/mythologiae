@@ -75,12 +75,11 @@ GROUP BY ?cit ?label ORDER BY DESC (?n_cit)
 LIMIT 5
  ```
 
-|cit                      |label                              |n_cit|n_categ                                                       |
+|cit                      |label                              |n_cit|max_n_categ                                                   |
 |-------------------------|-----------------------------------|-----|--------------------------------------------------------------|
-|http://example.org/cit/20|Eneide,                            |43   |http://example.org/categ/enea-fugge-da-troia                  |
-|http://example.org/cit/54|Publio Ovidio Nasone, Le Metamorfosi, VIII, vv. 176-177|33   |http://example.org/categ/arianna-e-dioniso-sincontrano        |
-|http://example.org/cit/20|Eneide,                            |31   |http://example.org/categ/suicidio-di-didone                   |
-|http://example.org/cit/27|Odissea, X                         |27   |http://example.org/categ/circe                                |
-|http://example.org/cit/27|Odissea, X                         |27   |http://example.org/categ/circe-trasforma-i-compagni-di-odisseo|
-
+|http://example.org/cit/20|Eneide,                            |328  |http://example.org/categ/vulcano                              |
+|http://example.org/cit/27|Odissea, X                         |118  |http://example.org/categ/sfinge                               |
+|http://example.org/cit/54|Publio Ovidio Nasone, Le Metamorfosi, VIII, vv. 176-177|43   |http://example.org/categ/arianna-tra-satiri-menadi-e-altre-figure-mitologiche|
+|http://example.org/cit/61|Odissea, X, vv. 203-243            |28   |http://example.org/categ/ermes-aiuta-odisseo                  |
+|http://example.org/cit/9 |Eneide                             |20   |http://example.org/categ/venere-e-anchise                     |
 
