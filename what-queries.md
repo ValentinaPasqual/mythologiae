@@ -60,7 +60,8 @@ WHERE {
 
 CQ3: Quali sono le 5 citazioni canoniche più citate nel dataset? E per ognuna di esse qual è la categoria che descrivono di più? 
 
-  ```SELECT DISTINCT ?cit ?label (COUNT(?cit) as ?n_cit) (MAX(?categ) as ?max_n_categ) 
+  ```
+SELECT DISTINCT ?cit ?label (COUNT(?cit) as ?n_cit) (MAX(?categ) as ?max_n_categ) 
 WHERE { 
   graph ?assertion {?cit ecrm:P67_refers_to ?categ}
   graph myth:factual_data {?categ a ecrm:E1_CRM_Entity. ?assertion a np:Assertion . 
