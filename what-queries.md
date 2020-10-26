@@ -43,4 +43,19 @@ WHERE {
   }
   
   ```
+  
+  |cit                      |txEl                             |
+|-------------------------|-----------------------------------|
+|http://example.org/cit/11|http://example.org/str/V-604-699   |
+|http://example.org/cit/20|http://example.org/str/VII-406-539 |
+|http://example.org/cit/44|http://example.org/str/V-42-113    |
+|http://example.org/cit/2 |http://example.org/str/V-362-484   |
+|http://example.org/cit/15|http://example.org/str/XI-1-99     |
+|http://example.org/cit/18|http://example.org/str/VII-195-204 |
+|http://example.org/cit/22|http://example.org/str/VII-148-285 |
+|http://example.org/cit/64|http://example.org/str/VII-25-36   |
+|http://example.org/cit/19|http://example.org/str/VII-406-539 |
+|http://example.org/cit/42|http://example.org/str/IX-25-175   |
+|http://example.org/cit/40|http://example.org/str/VIII-560-584|
+
 
