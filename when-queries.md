@@ -146,3 +146,60 @@ Gli item appartenti all'arte contemporanea all'interno del dataset presentano un
 
 ![Alt text](categ-cont-modern.svg)
 
+Per quanto riguarda l'arte moderna, quali sono i titoli e le rispettive descrizioni degli item che rappresentano "saghe epiche e familiari"? 
+ ```
+SELECT DISTINCT ?item ?title
+WHERE {
+ graph ?assertion {
+    ?itemExp ecrm:P67_refers_to <http://example.org/categ/saghe-familiari-e-epiche>}
+  graph myth:factual_data {
+    ?creation efrbroo:R18_created ?itemExp; 
+               efrbroo:R18_created ?item;
+    	ecrm:P10_falls_within <http://example.org/time/arte-moderna> .
+    ?itemExp a efrbroo:F2_Expression.
+    ?item a efrbroo:F4_Manifestation_Singleton ;
+             dct:title ?title . }}
+ ```
+ 
+ NB: Se faccio la query chiedendo anche le descrizioni degli item, ne trova solo 5 --> I dati sono molto incompleti
+ 
+|    | title                                                                                                                          |   |
+|----|--------------------------------------------------------------------------------------------------------------------------------|---|
+| 1  | "Agamennone sacrifica Ifigenia"                                                                                                |   |
+| 2  | "Piatto con Paride che uccide Achille e le armi della famiglia Calini"                                                         |   |
+| 3  | "Teti porta l'armatura ad Achille"                                                                                             |   |
+| 4  | "Marte e Rhea Silvia: al centro Marte tiene uno scudo e una spada, Rhea Silvia dorme, Apollo nel suo carro in alto a sinistra" |   |
+| 5  | "Piatto raffigurante il cavallo di Troia"                                                                                      |   |
+| 6  | "Giudizio di Paride"                                                                                                           |   |
+| 7  | "Achille sta per uccidere Ettore, Pallade Atena tra di loro"                                                                   |   |
+| 8  | "L'Educazione di Achille"                                                                                                      |   |
+| 9  | "Un vecchio sabino accovacciato"                                                                                               |   |
+| 10 | "Piatto con la morte di Achille"   
+
+CQ:Quali sono le opere prodotte in periodo arte moderna che si collegano agli item tramite la categoria ‘saghe-epiche-e-familiari’?
+
+ ```
+ SELECT DISTINCT ?work ?workType 
+WHERE {
+  graph ?assertion {
+    ?itemExp ecrm:P67_refers_to <http://example.org/categ/saghe-familiari-e-epiche>. 
+  	?work ecrm:P67_refers_to <http://example.org/categ/saghe-familiari-e-epiche>}
+  graph myth:factual_data { 
+    ?creation efrbroo:R18_created ?itemExp; 
+    	ecrm:P10_falls_within <http://example.org/time/arte-moderna> .
+    ?itemExp a efrbroo:F2_Expression. 
+    ?work a efrbroo:F1_Work ; 
+          ecrm:P2_has_type ?workType}} 
+ ```
+|   | work                                         | workType                         |
+|---|----------------------------------------------|----------------------------------|
+| 1 | myth:work/virgil-aeneis                      | myth:fonteClassica               |
+| 2 | myth:work/alighieri-dante-divina-commedia    | myth:work/fonteMedievaleOModerna |
+| 3 | myth:work/leopardi-giacomo-canti             | myth:work/riscritturaLetteraria  |
+| 4 | myth:work/petrarca-francesco-trionfi         | myth:work/fonteMedievaleOModerna |
+| 5 | myth:work/ungaretti-giuseppe-vita-di-un-uomo | myth:work/riscritturaLetteraria  |
+
+!!!!!!!!!! NB: Mancano alcune opere classiche (3) che vanno riconciliate ancora !!!!!!!!!
+Però i dati tornano
+
+
