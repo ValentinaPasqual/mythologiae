@@ -128,3 +128,6 @@ Comparando i dati delle due tabelle di CQ5  e CQ6 ...
 Inoltre considerando che le categorie rappresentate dagli item prodotti in eta contemporanea sono XX ed in arte moderna sono XX, risulata che: 
 Gli item appartenti all'arte contemporanea all'interno del dataset presentano una maggiore omogeneità delle categorie --> sono di più e più uniformemente distribute, mentre nell'arte moderna c'è una forte maggioranza di rappresentazione della categoria "gli-dei" (+ 18,8% rispetto alla stessa categoria in contemporanea == il doppio)
 
+
+![Alt text](categ-cont-modern.svg)
+
