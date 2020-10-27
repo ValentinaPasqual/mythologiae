@@ -105,7 +105,7 @@ WHERE {
 
 GROUP BY ?category ORDER BY DESC (?n_item_expr)
  ```
-| category                            | n_item_expr        |
+| category                            | n_item_expr        | 
 |-------------------------------------|--------------------|
 | myth:categ/gli-dei                  | "199"^^xsd:integer |
 | myth:categ/prometeo                 | "156"^^xsd:integer |
