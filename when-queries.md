@@ -113,3 +113,18 @@ GROUP BY ?category ORDER BY DESC (?n_item_expr)
 | myth:categ/saghe-familiari-e-epiche | "88"^^xsd:integer  |
 | myth:categ/afrodite                 | "73"^^xsd:integer  |
 
+Comparando i dati delle due tabelle di CQ5  e CQ6 ...
+
+| category                            | % arte-moderna | % arte-contemporanea |
+|-------------------------------------|----------------|----------------------|
+| myth:categ/gli-dei                  | 37,0           | 18,2                 |
+| myth:categ/saghe-familiari-e-epiche | 10,4           | 8,1                  |
+| myth:categ/eros                     | 10,4           | 5,2                  |
+| myth:categ/afrodite                 | 9,8            | 6,7                  |
+| myth:categ/personaggi-e-narrazioni  | 8,7            | 6,0                  |
+| myth:categ/prometeo                 | 3,9            | 14,3                 |
+| myth:categ/miti-di-fondazione       | 5,3            | 14,1                 |
+
+Inoltre considerando che le categorie rappresentate dagli item prodotti in eta contemporanea sono XX ed in arte moderna sono XX, risulata che: 
+Gli item appartenti all'arte contemporanea all'interno del dataset presentano una maggiore omogeneità delle categorie --> sono di più e più uniformemente distribute, mentre nell'arte moderna c'è una forte maggioranza di rappresentazione della categoria "gli-dei" (+ 18,8% rispetto alla stessa categoria in contemporanea == il doppio)
+
