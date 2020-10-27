@@ -62,7 +62,7 @@ WHERE {
 }
 GROUP BY ?country_label ORDER BY DESC (?max_cat)
 ```
-### CQ5: Qual è l'opera più citata in relazione agli item di ogni stato? --> finire
+### CQ5: Qual è l'opera più citata in relazione agli item di ogni stato? 
 ```
 SELECT DISTINCT ?country_label (MAX(?work) AS ?max_work) 
 WHERE {
@@ -75,6 +75,15 @@ WHERE {
 GROUP BY ?country_label ORDER BY DESC (?max_work)
 LIMIT 1 
 ```
+
+|country_label|max_work                                                        |
+|-------------|----------------------------------------------------------------|
+|Australia    |http://example.org/work/zingarelli-nicola-antonio-edipo-a-colono|
+|Austria      |http://example.org/work/zingarelli-nicola-antonio-edipo-a-colono|
+|Belgium      |http://example.org/work/zingarelli-nicola-antonio-edipo-a-colono|
+|Brazil       |http://example.org/work/zingarelli-nicola-antonio-edipo-a-colono|
+|Canada       |http://example.org/work/zingarelli-nicola-antonio-edipo-a-colono|
+
 ### CQ6: Qual è il paese con più item?
 ```
 SELECT (COUNT(DISTINCT ?item) AS ?n_items) ?country
