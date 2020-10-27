@@ -35,6 +35,44 @@ CQ3: Quanti item sono stati creati in ogni periodo?
 
 CQ4: Qual è la categoria più rappresentata in ogni periodo? 
 
+
+CHECK PER LE DATE: quali sono gli item la cui creazione è posteriore al 1300?
+ ```
+SELECT DISTINCT ?item
+WHERE {
+
+  graph myth:factual_data { 
+    ?item_expr a efrbroo:F2_Expression. 
+    ?item a efrbroo:F4_Manifestation_Singleton .
+    ?creation efrbroo:R18_created ?item_expr ;
+              efrbroo:R18_created ?item ; 
+    			ecrm:P10_falls_within  ?timeSpan. 
+    ?timeSpan ecrm:P82a_begin_of_the_begin ?date 
+  }
+
+
+  FILTER( ?date >= xsd:date("1300-01-01"))
+}
+ ```
+ 
+ CHECK PER LE DATE: quali sono gli item la cui creazione è anteriore al 10 a.C.? 
+ ```
+SELECT DISTINCT ?item ?date
+WHERE {
+
+  graph myth:factual_data { 
+    ?item_expr a efrbroo:F2_Expression. 
+    ?item a efrbroo:F4_Manifestation_Singleton .
+    ?creation efrbroo:R18_created ?item_expr ;
+              efrbroo:R18_created ?item ; 
+    			ecrm:P10_falls_within  ?timeSpan. 
+    ?timeSpan ecrm:P82a_begin_of_the_begin ?date }
+
+  FILTER( ?date < xsd:date("-0010-01-01"))
+}
+ ```
+
+
 ## Approfondimento ed analisi sui dati per il modulo WHEN
 
 4311 Items appartengono ad un periodo
