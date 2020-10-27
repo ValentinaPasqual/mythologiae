@@ -188,7 +188,7 @@ Gli item appartenti all'arte contemporanea all'interno del dataset presentano un
 ![Alt text](categ-cont-modern.svg)
 La seguente figura mostra la stessa distribuzione ma per tutte le categorie che compaiono in contemporanea o moderna
 
-![Alt text](nItem_xCat_xMod-Cont.svg)
+![Alt text](nItem_xCat_xMod-Cont.png)
 
 Per quanto riguarda l'arte moderna, quali sono i titoli e le rispettive descrizioni degli item che rappresentano "saghe epiche e familiari"? 
  ```
