@@ -2,7 +2,7 @@
 
 ### CQ1: A quali periodi storici appartengono gli item che rappresentano Didone?
 
-
+ ```
 SELECT (COUNT(DISTINCT ?item) AS ?n_items) ?period
 WHERE {
     graph ?assertion {?item_expr ecrm:P67_refers_to <http://example.org/categ/didone>}
@@ -14,9 +14,9 @@ WHERE {
     ?period dct:type "periodo"
   }}
 GROUP BY ?period ORDER BY DESC (?n_items)
-
+ ```
 ### CQ2: A quale periodo appartengono gli item la cui categoria è citata nelle Eneide?
-
+ ```
 SELECT (COUNT(DISTINCT ?item) AS ?n_items) ?period
 WHERE { 
   graph ?assertion {?item_expr ecrm:P67_refers_to ?categ. 
@@ -30,7 +30,7 @@ WHERE {
   }}
 
 GROUP BY ?period ORDER BY DESC (?n_items)
-
+ ```
 CQ3: Quanti item sono stati creati in ogni periodo?
 
 CQ4: Qual è la categoria più rappresentata in ogni periodo? 
@@ -70,7 +70,7 @@ Ci vorrebbe un re-regroup delle categorie con le loro superclassi, così da pote
 Il dataset risulta sbilanciato per quanto riguarda i periodi 
 
 CQ5: Quali sono i 5 temi più rappresentati in arte moderna?
-
+ ```
 SELECT DISTINCT ?category (COUNT(?item_expr) AS ?n_item_expr)
 WHERE {
       graph ?assertion {?item_expr ecrm:P67_refers_to ?category}
@@ -82,7 +82,7 @@ WHERE {
 }
 
 GROUP BY ?category ORDER BY DESC (?n_item_expr)
-
+ ```
 | category                            | n_item_expr        |
 |-------------------------------------|--------------------|
 | myth:categ/gli-dei                  | "716"^^xsd:integer |
@@ -92,7 +92,7 @@ GROUP BY ?category ORDER BY DESC (?n_item_expr)
 | myth:categ/personaggi-e-narrazioni  | "168"^^xsd:integer |
 
 CQ6: Quali sono i 5 temi più rappresentati in arte contemporanea?
-
+ ```
 SELECT DISTINCT ?category (COUNT(?item_expr) AS ?n_item_expr)
 WHERE {
       graph ?assertion {?item_expr ecrm:P67_refers_to ?category}
@@ -104,7 +104,7 @@ WHERE {
 }
 
 GROUP BY ?category ORDER BY DESC (?n_item_expr)
-
+ ```
 | category                            | n_item_expr        |
 |-------------------------------------|--------------------|
 | myth:categ/gli-dei                  | "199"^^xsd:integer |
