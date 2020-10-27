@@ -75,9 +75,11 @@ WHERE {
 
 ## Approfondimento ed analisi sui dati per il modulo WHEN
 
-4311 Items appartengono ad un periodo
-4345 sono gli item totali nel dataset 
-34 sono gli item a cui non viene assegnato un periodo  
+* 4311 Items appartengono ad un periodo
+* 4345 sono gli item totali nel dataset 
+* 34 sono gli item a cui non viene assegnato un periodo  
+
+Di seguito: Tabella della distribuzione degli item per periodo di creazione
 
 |   n_items           | period                                 |
 |---------------------|----------------------------------------|
@@ -97,7 +99,7 @@ Ci vorrebbe un re-regroup delle categorie con le loro superclassi, così da pote
 
 | Sovra-periodo      | N items | % items su tot |
 |--------------------|---------|----------------|
-| arte moderna:      | 1936    | 44,6           |
+| arte moderna       | 1936    | 44,6           |
 | arte contemporanea | 1093    | 25,16          |
 | arte greca         | 717     | 16,5           |
 | arte romana        | 19,7    | 19,7           |
@@ -105,9 +107,10 @@ Ci vorrebbe un re-regroup delle categorie con le loro superclassi, così da pote
 | arte medievale     | 0,5     | 0,5            |
 | no periodo         | 0,8     | 0,8            |
 
-Il dataset risulta sbilanciato per quanto riguarda i periodi 
-
-CQ5: Quali sono i 5 temi più rappresentati in arte moderna?
+Il dataset risulta sbilanciato per quanto riguarda i periodi.  
+Prendiamo dunque i due periodi con % più alta. 
+  
+CQ5: Quali sono i 5 temi (categorie) più rappresentati in arte moderna?
  ```
 SELECT DISTINCT ?category (COUNT(?item_expr) AS ?n_item_expr)
 WHERE {
@@ -183,6 +186,9 @@ Considerando che le categorie rappresentate dagli item prodotti in eta contempor
 Gli item appartenti all'arte contemporanea all'interno del dataset presentano una maggiore omogeneità delle categorie --> sono di più e più uniformemente distribute, mentre nell'arte moderna c'è una forte maggioranza di rappresentazione della categoria "gli-dei" (+ 18,8% rispetto alla stessa categoria in contemporanea == il doppio)
 
 ![Alt text](categ-cont-modern.svg)
+La seguente figura mostra la stessa distribuzione ma per tutte le categorie che compaiono in contemporanea o moderna
+
+![Alt text](nItem_xCat_xMod-Cont.svg)
 
 Per quanto riguarda l'arte moderna, quali sono i titoli e le rispettive descrizioni degli item che rappresentano "saghe epiche e familiari"? 
  ```
