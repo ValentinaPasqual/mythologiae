@@ -1,14 +1,18 @@
-#Queries on places (where module)
+# Queries on places (where module)
 
-CQ1: SELECT DISTINCT ?item
+NB: Spesso nelle query vengono presentati solo i primi 10 risualtati di ogni query per una questione di spazio
+
+### CQ1: Quali sono gli item che si trovano a Londra? 
+
 ```
+SELECT DISTINCT ?item
 WHERE {graph myth:factual_data {?item ecrm:P55_has_current_location ?collocation. 
     ?collocation ecrm:P89_falls_within ?city . 
     ?city rdfs:label ?city_label }
 FILTER regex(?city_label, "london", "i")
 }
 ```
-CQ2: Quanti sono gli item che si trovano al Tate Modern?
+### CQ2: Quanti sono gli item che si trovano al Tate Modern?
 ```
 SELECT DISTINCT ?item 
 WHERE {graph myth:factual_data {?item ecrm:P55_has_current_location ?collocation. 
@@ -20,7 +24,7 @@ WHERE {graph myth:factual_data {?item ecrm:P55_has_current_location ?collocation
 }
 ```
 
-CQ3: Qual è la keyword più usata in ogni stato? 
+### CQ3: Qual è la keyword più usata in ogni stato? 
 ```
 SELECT DISTINCT ?country_label (MAX(?keyword) AS ?max_k) 
 WHERE {graph myth:factual_data {?item ecrm:P55_has_current_location ?collocation. 
@@ -45,9 +49,8 @@ GROUP BY ?country_label ORDER BY DESC (?max_k)
 |Australia               |zeus           |
 
 [NB: Dalle keyword si presuppone che la rappresentazione più gettonata sia zeus]
-[NB2: Nella tabella sono mostrati solo i primi 10 elementi]
 
-CQ4: Qual è la rappresentazione più gettonata per gli item di ogni stato? --> finire
+### CQ4: Qual è la rappresentazione più gettonata per gli item di ogni stato? --> finire
 ```
 SELECT DISTINCT ?country_label (MAX(?categ) AS ?max_cat) 
 WHERE {
@@ -59,7 +62,7 @@ WHERE {
 }
 GROUP BY ?country_label ORDER BY DESC (?max_cat)
 ```
-CQ5: Qual è l'opera più citata in relazione agli item di ogni stato? --> finire
+### CQ5: Qual è l'opera più citata in relazione agli item di ogni stato? --> finire
 ```
 SELECT DISTINCT ?country_label (MAX(?work) AS ?max_work) 
 WHERE {
@@ -72,7 +75,7 @@ WHERE {
 GROUP BY ?country_label ORDER BY DESC (?max_work)
 LIMIT 1 
 ```
-CQ6: Qual è il paese con più item?
+### CQ6: Qual è il paese con più item?
 ```
 SELECT (COUNT(DISTINCT ?item) AS ?n_items) ?country
 WHERE {
