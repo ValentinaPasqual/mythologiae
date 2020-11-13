@@ -681,7 +681,7 @@ GROUP BY ?work ?type ORDER BY DESC (?n_work)
 				<div class="col-sm-4">
 					<div class="card h-100">
 						<div class="card-body">
-							<p class="card-text">Which is the most ancient cultural object in the dataset? Which are its title, date, type?</p>
+							<p class="card-text">Which are the most cited works in the dataset in relation to their cited categories?</p>
 							<pre class="w-100"><code>
 SELECT DISTINCT ?work ?categ (COUNT(?work) as ?n_cit)
 WHERE {
