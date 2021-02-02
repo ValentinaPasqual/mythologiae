@@ -65,36 +65,46 @@
         <!-- Page Content Holder -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
 
-                    <button type="button" id="sidebarCollapse" class="navbar-btn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            
-                    </button>
+                <button type="button" id="sidebarCollapse" class="navbar-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        
+                </button>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link page-scroll" href="../homepage/index.html">homepage</a>
+                    </li>
+                    <li class="nav-item dropdown navbar-light bg-light">
+                      <a class="nav-link dropdown-toggle" href="homepage/mima.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        knowledge organisation
+                      </a>
+                      <div class="dropdown-menu navbar-light bg-light w-100" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item navbar-light bg-light w-100" href="../homepage/datamodel.html">datamodel</a>
+                        <a class="dropdown-item navbar-light bg-light w-100" href="../homepage/dataset.html">dataset</a>
+                        <a class="dropdown-item navbar-light bg-light w-100" href="../homepage/queries.html">queries</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="index.html" style="color:black"><b>collection</b></a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="index.html#doc">credits</a>
+                    </li>
+
+                  </ul>
                 </div>
-            </nav>
+            </div>
+
+        </nav>
             <div id="loader"></div>
             <div style="display:none;" id="myDiv" class="animate-bottom"></div>
                 <div class="cards-wrapper" style="max-width:100% !important;">

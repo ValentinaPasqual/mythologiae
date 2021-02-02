@@ -11,7 +11,8 @@ body, .sidebar-header h3,
 h1, h2, h3, h4, h5, h6, 
 #sidebar ul li a, 
 #sidebar .bottomline div, 
-.deselectstartover, .facetitem, .legenda {
+.deselectstartover, .facetitem, .legenda,
+#navbarSupportedContent, nav{
     font-family: 'Trebuchet MS', sans-serif !Important
 }
 
