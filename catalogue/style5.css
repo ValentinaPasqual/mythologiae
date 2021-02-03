@@ -281,6 +281,23 @@ a.article, a.article:hover {
 .legenda div {font-size:0.8rem!important; margin-bottom:0.4rem; margin-top:0.4rem;}
 .legenda {margin:0.2rem}
 
+img {
+    -webkit-animation: appear 1s;
+    animation: appear 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+ }
+ 
+ @-webkit-keyframes appear {
+    0% { left: 500px; opacity: 0; }
+    100% { left: 16px; opacity: 1; }  
+ }
+ 
+ @keyframes appear {
+    0% { left: 500px; opacity: 0; }
+    100% { left: 16px; opacity: 1; }  
+ }
+
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
