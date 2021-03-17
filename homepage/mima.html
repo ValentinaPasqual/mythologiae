@@ -16,11 +16,58 @@
   <!-- Custom styles for this template -->
   <link href="css/full-width-pics.css" rel="stylesheet">
 
+<style>#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  content: url('catalogue/dependencies/statue.svg');
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+}</style>
 
 
 </head>
 
-<body>
+<body onload="myFunction()">
+
+  
 
 		            <!-- Navigation -->
                 <nav class="navbar navbar-expand-md navbar-light bg-light">
@@ -43,6 +90,9 @@
                       <li class="nav-item">
                         <a class="nav-link" href="../catalogue/index.html">collection</a>
                       </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="../storytelling/index.html">storytelling</a>
+                      </li>
                       
                       <li class="nav-item">
                         <a class="nav-link page-scroll" href="index.html#doc">credits</a>
@@ -56,9 +106,12 @@
     <img class="img-fluid d-block mx-auto" src="http://placehold.it/200x200&text=Logo" alt="">
   </header> -->
 
-  <div clss="container">
+  <div id="loader"> </div>
+  <div id="myDiv" class="w-100">
+
+
     <div class="row h-100">
-      <div class="col-4">
+      <div class="col-sm-12 col-md-4">
         <a href="datamodel.html" target="_blank">
           <div class="py-5 bg-image-full" style="background-image: url('imgs/row-1-col-1.jpg'); height: 100vh">
             <div class="d-flex align-items-center justify-content-center mt-5 mb-5 pt-5 pb-5">
@@ -70,9 +123,9 @@
         </a>
       </div>
 
-      <div class="col-4">
+      <div class="col-sm-12 col-md-4">
         <a href="dataset.html" target="_blank">
-          <div class="py-5 bg-image-full" style="background-image: url('imgs/row-1-col-2.jpg'); height: 100vh ">
+          <div class="py-5 bg-image-full m-sm-2" style="background-image: url('imgs/row-1-col-2.jpg'); height: 100vh ">
             <div class="d-flex align-items-center justify-content-center mt-5 mb-5 pt-5 pb-5" >
                 <div class="p-2 mt-5 mb-5 pt-5 pb-5 bd-highlight flex-button overlay">
                     <div> dataset </div>
@@ -81,7 +134,7 @@
           </div>
         </a>
       </div>
-      <div class="col-4">
+      <div class="col-sm-12  col-md-4">
         <a href="queries.html" target="_blank"> 
           <div class="py-5 bg-image-full" style="background-image: url('imgs/row-1-col-3.jpg'); height: 100vh">
             <div class="d-flex align-items-center justify-content-center mt-5 mb-5 pt-5 pb-5">
@@ -92,9 +145,7 @@
           </div>
         </a>
       </div>
-      </div>
     </div>
-  </div>
 
   <footer class="py-3 bg-light">
     <div class="container">
@@ -102,6 +153,22 @@
     </div>
     <!-- /.container -->
   </footer>
+
+</div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script>
+      var myVar;
+      
+      function myFunction() {
+        myVar = setTimeout(showPage, 2000);
+      }
+      
+      function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "inherit";
+      }
+      </script>
 
 
   <!-- Bootstrap core JavaScript -->
