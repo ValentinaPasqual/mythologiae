@@ -12,6 +12,9 @@
 		<link href="css/full-width-pics.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+        <!--AJAX FOR ALL IMPORTS-->  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
         
 
 
@@ -38,6 +41,8 @@
 				body {background-color:white !important}
 
 				.col-sm-4 {padding:0.5em !important}
+
+                td {line-height: 1.5;}
 
                 
 
@@ -85,14 +90,13 @@
                     <h1 id="mythologiae-queries">MythoLOD dataset</h1>
                     <h2> Intoduction </h2>
                     <p>Mythologiae source data has been originally extracted from <a href="">Mythologiae Collection</a>. Such digital collection has been designed and implemented by 
-                    FRAMELab (University of Bologna) as a collaborative project between researchers and students. The digital collection today "raccoglie" (but still it is 
-                    an ongoing project) 4545 cultural object with different characteristics (e.g types, periods, authors, collocations). The collection pivotal element is 
-                    given by the fact that each item represents scenes from mythological and/or classical themes. Moreover, the most peculiar characteristic of such collection
-                is that firstly, to each cultural object is associated a conceptual category (e.g. macrothemes describing the abovementioned scenes) and secondly, it is 
-            associated to a literary source. Each cultural object then, shares the meaning of its depicted scene with one or more themes narrated in a literary source. 
+                    FRAMELab (University of Bologna) as a collaborative project between researchers and students. The digital collection today stores (but still it is 
+                    an ongoing project) 4260 cultural objects with different characteristics (e.g types, periods, authors, collocations). Each item of the collection has been referenced to depict a mythological 
+                    scene by an expert and, when possible, to the literary reference which the expert states to share at some point the same scene. 
             </p>
             <p>This section presents briefly the process of conversion of data from database format to LOD and then presents an example of how a typical assertion has been
-                represented with <a href="">MIMA datamodel</a>.  
+                represented with a customisation of <a href="https://mima-data-model.github.io/mima-documentation/">MIMA datamodel</a> (please refer to this 
+                    <a href="https://www.jlis.it/article/view/12642">article</a>).  
             </p>
 
             <h2>Download mythLOD dataset</h2>
@@ -128,7 +132,7 @@
                     <td>Version 1</td>
                     <td>31/03/2021</td>
                     <td>NQ</td>
-                    <td><a href="../dataset.jsonld" download="mythLOD-dataset.nq" class="btn" download><i class="fa fa-download"></i></a></td>
+                    <td><a href="../dataset.nq" download="mythLOD-dataset.nq" class="btn" download><i class="fa fa-download"></i></a></td>
                   </tr>
                 </tbody>
               </table>
@@ -158,171 +162,19 @@
             </ul>
         </p>
 
-            <p><b>The case study in Trig notation</b>:</p>
+            <h2>The case study in Trig notation</h2>
 
             <pre><code> 
-                @prefix myth: &lt;https://dharc-org.github.io/mythologiae/&gt; .
-                @prefix hucit: &lt;http://purl.org/net/hucit#&gt; .
-                @prefix wdp: &lt;https://www.wikidata.org/wiki/Property:&gt; .
-                @prefix np: &lt;http://www.nanopub.org/nschema#&gt; .
-                @prefix ecrm: &lt;http://erlangen-crm.org/current/&gt; .
-                @prefix hico: &lt;http://purl.org/emmedi/hico/&gt; .
-                @prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .
-                @prefix dct: &lt;http://purl.org/dc/terms/&gt; .
-                @prefix schema: &lt;http://schema.org/&gt; .
-                @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-                @prefix efrbroo: &lt;http://erlangen-crm.org/efrbroo/&gt; .
-                @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
-                @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
-                @prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
-                @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-                 
-                myth:head449 {
-                    myth:np-449 a np:Nanopublication ;
-                        np:hasAssertion myth:assertion449 ;
-                        np:hasProvenance myth:provenance449 ;
-                        np:hasPublicationInfo myth:pubInfo449 .
-                }
-                 
-                myth:assertion449 {
-                    &lt;https://dharc-org.github.io/mythologiae/cit/122&gt; ecrm:P67_refers_to &lt;https://dharc-org.github.io/mythologiae/categ/medea-figlicida&gt; .
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/item/449-expression&gt; ecrm:P67_refers_to &lt;https://dharc-org.github.io/mythologiae/categ/medea-figlicida&gt; .
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/work/lenormand-henri-rene-asie&gt; ecrm:P67_refers_to &lt;https://dharc-org.github.io/mythologiae/categ/medea-figlicida&gt; .
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/work/dolce-lodovico-medea&gt; ecrm:P67_refers_to &lt;https://dharc-org.github.io/mythologiae/categ/medea-figlicida&gt; .
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/work/seneca-lucius-annaeus-medea&gt; ecrm:P67_refers_to &lt;https://dharc-org.github.io/mythologiae/categ/medea-figlicida&gt; .
-                }
-                 
-                myth:provenance449 {
-                    myth:assertion449 prov:wasGeneratedAtTime &quot;2019-04-11T14:25:00&quot;^^xsd:dateTime ;
-                        prov:wasGeneratedBy &lt;https://dharc-org.github.io/mythologiae/int-act/449&gt; .
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/int-act/449&gt; a prov:InterpretationAct ;
-                        hico:hasInterpretationCriterion myth:sources-association ;
-                        hico:hasInterpretationType myth:iconographic-approach ;
-                        prov:wasAttributedTo &lt;https://dharc-org.github.io/mythologiae/person/gamba-hubert&gt; .
-                }
-                 
-                myth:pubInfo449 {
-                    myth:np-449 prov:wasAttributedTo &lt;https://dharc-org.github.io/mythologiae/person/dharc&gt; ;
-                        prov:wasGeneratedAtTime &quot;2020-08-24T09:00:00&quot;^^xsd:dateTime .
-                }
-                 
-                myth:factual_data { [...]
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/item/449&gt; a efrbroo:F4_Manifestation_Singleton ;
-                        ecrm:P2_has_type &lt;https://dharc-org.github.io/mythologiae/type/pittura-vascolare&gt; ;
-                        ecrm:P55_has_current_location &lt;https://dharc-org.github.io/mythologiae/place/museum-of-art-cleveland&gt;;
-                        dct:note &quot;&quot;&quot;Medea sul carro del Sole, dopo l&rsquo;assassinio dei figli. 
-                Cratere a calice lucano.&quot;&quot;&quot;^^xsd:string ;
-                        dct:subject &quot;carro&quot;^^xsd:string,
-                            &quot;figlicida&quot;^^xsd:string,
-                            &quot;medea&quot;^^xsd:string ;
-                        dct:title &quot;Fuga di Medea&quot;^^xsd:string ;
-                        schema:image &quot;2019/04/Cleveland-cratere-Medea.jpg&quot;^^xsd:string .
-                 
-                        &lt;https://dharc-org.github.io/mythologiae/type/pittura-vascolare&gt; a ecrm:P55_Type ;
-                        rdfs:label &quot;Pittura vascolare&quot;^^xsd:string .
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/place/museum-of-art-cleveland&gt; a ecrm:E53_Place ;
-                        rdfs:label &quot;Indianapolis Museum of Art&quot;^^xsd:string ;
-                        ecrm:P2_has_type &lt;https://dharc-org.github.io/mythologiae/type/collocazione&gt; ;
-                        ecrm:P89_falls_within &lt;https://dharc-org.github.io/mythologiae/place/cleveland&gt;,
-                            &lt;https://dharc-org.github.io/mythologiae/place/united-states-of-america&gt; ;
-                        owl:sameAs &lt;http://sws.geonames.org/7123182&gt;,
-                            &lt;http://worldcat.org/identities/lccn-n79063278&gt;,
-                            &lt;https://id.loc.gov/authorities/names/n79063278&gt;,
-                            &lt;https://www.wikidata.org/wiki/Q1117704&gt; ;
-                        wdp:P625 &quot;39.8259,-86.1855&quot;^^xsd:string .
-
-                    &lt;https://dharc-org.github.io/mythologiae/place/cleveland&gt; a ecrm:E53_Place ;
-                        rdfs:label &quot;Cleveland&quot;^^xsd:string;
-                        ecrm:P2_has_type &lt;https://dharc-org.github.io/mythologiae/type/citt&agrave;&gt; ;
-                        ecrm:P89_falls_within &lt;https://dharc-org.github.io/mythologiae/place/united-states-of-america&gt; ;
-                        owl:sameAs &lt;http://sws.geonames.org/5150529&gt;,
-                            &lt;https://www.wikidata.org/wiki/Q37320&gt; ;
-                        wdp:P625 &quot;41.482222222222,-81.669722222222&quot;^^xsd:string .
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/place/united-states-of-america&gt; a ecrm:E53_Place ;
-                        rdfs:label &quot;United States of America&quot;^^xsd:string ;
-                        ecrm:P2_has_type &lt;https://dharc-org.github.io/mythologiae/type/nazione&gt; ;
-                        owl:sameAs &lt;http://sws.geonames.org/6252001&gt; .
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/item/449-expression&gt; a efrbroo:F2_Expression ;
-                        dct:description &quot;Medea fugge sul carro dopo aver ucciso i figli, completando la vendetta nei confronti di Giasone&quot;^^xsd:string .
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/item/449-creation&gt; a efrbroo:F28_Expression_Creation ;
-                        ecrm:P10_falls_within &lt;https://dharc-org.github.io/mythologiae/time/arte-greca-eta-classica&gt; ;
-                        ecrm:P14_carried_out_by &lt;https://dharc-org.github.io/mythologiae/person/cerchia-del-pittore-di-policoro&gt; ;
-                        ecrm:P4_has_time_span &lt;https://dharc-org.github.io/mythologiae/time/400-a-c&gt;,
-                            &lt;https://dharc-org.github.io/mythologiae/time/v-secolo-a-c&gt; ;
-                        efrbroo:R18_created &lt;https://dharc-org.github.io/mythologiae/item/449&gt;,
-                            &lt;https://dharc-org.github.io/mythologiae/item/449-expression&gt; .
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/time/arte-greca-eta-classica&gt; a ecrm:E4_Period ;
-                        rdfs:label &quot;Arte greca - Et&agrave; classica&quot;^^xsd:string ;
-                        ecrm:P2_has_type &lt;https://dharc-org.github.io/mythologiae/type/periodo&gt;  ;
-                        owl:sameAs &lt;https://www.wikidata.org/wiki/Q16064885&gt; .
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/person/cerchia-del-pittore-di-policoro&gt; a efrbroo:F10_Person ;
-                        rdfs:label &quot;Cerchia del pittore di Policoro&quot;^^xsd:string .
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/time/400-a-c&gt; a ecrm:E52_Time-Span ;
-                        rdfs:label &quot;400a.C.&quot;^^xsd:string ;
-                        ecrm:P2_has_type &lt;https://dharc-org.github.io/mythologiae/type/anno&gt;  ;
-                        ecrm:P82a_begin_of_the_begin &quot;0400-01-01&quot;^^xsd:date ;
-                        ecrm:P82b_end_of_the_end &quot;0400-01-01&quot;^^xsd:date .
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/time/v-secolo-a-c&gt; a ecrm:E52_Time-Span ;
-                        rdfs:label &quot;V secolo a.C.&quot;^^xsd:string ;
-                        ecrm:P2_has_type &lt;https://dharc-org.github.io/mythologiae/type/secolo&gt;  ;
-                        ecrm:P82a_begin_of_the_begin &quot;-500-01-01Z&quot;^^xsd:date ;
-                        ecrm:P82b_end_of_the_end &quot;-401-12-31Z&quot;^^xsd:date ;
-                        owl:sameAs &lt;http://www.wikidata.org/entity/Q25339&gt; .
-                 
-                [example of one of the cited works in myth:assertion449 - cit/122]
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/cit/122&gt; a hucit:CanonicalCitation ;
-                        rdfs:label &quot;Seneca, Medea, vv. 893-1027&quot;^^xsd:string ;
-                        ecrm:P2_has_type &lt;https://dharc-org.github.io/mythologiae/work/fonteClassica&gt; ;
-                        hucit:has_content &lt;https://dharc-org.github.io/mythologiae/str/893-1027&gt; ;
-                        rdfs:seeAlso &lt;http://data.perseus.org/citations/urn:cts:greekLit:tlg0006.tlg003.perseus-eng1:893-1027&gt; .
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/str/893-1027&gt; a hucit:TextElement ;
-                        ecrm:P1_is_identified_by &lt;https://dharc-org.github.io/mythologiae/urn:cts:greekLit:tlg0006.tlg003:893-1027&gt; ;
-                        hucit:element_part_of &lt;https://dharc-org.github.io/mythologiae/str/seneca-lucius-annaeus-medea&gt; .
-                    
-                    &lt;https://dharc-org.github.io/mythologiae/urn:cts:greekLit:tlg0006.tlg003:893-1027&gt; a ecrm:E42_Identifier ;
-                        rdfs:label &quot;urn:cts:greekLit:tlg0006.tlg003:893-1027&quot;^^xsd:string ;
-                        ecrm:P2_has_type myth:CTS-URN .
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/str/seneca-lucius-annaeus-medea&gt; a hucit:CanonicalTextStructure ;
-                        hucit:is_canonical_structure_of &lt;https://dharc-org.github.io/mythologiae/work/seneca-lucius-annaeus-medea&gt; .
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/work/seneca-lucius-annaeus-medea&gt; a efrbroo::F1_Work ;
-                        rdfs:label &quot;Seneca, Lucius Annaeus, approximately 4 B.C.-65 A.D. | Medea&quot;^^xsd:string ;
-                        ecrm::P2_has_type myth:fonteClassica ;
-                        rdfs:seeAlso &lt;http://data.perseus.org/texts/urn:cts:latinLit:phi1017.phi004&gt; ;
-                        owl:sameAs &lt;http://viaf.org/viaf/175560230&gt; .
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/work/seneca-lucius-annaeus-medea-conception&gt; a    efrbroo:F27_Work_Conception ;
-                        efrbroo:R16_initiated &lt;https://dharc-org.github.io/mythologiae/work/seneca-lucius-annaeus-medea&gt; ;
-                        ecrm:P14_carried_out_by &lt;https://dharc-org.github.io/mythologiae/person/seneca-lucius-anneus&gt; .
-                 
-                    &lt;https://dharc-org.github.io/mythologiae/person/seneca-lucius-anneus&gt; a efrbroo:F10_Person ;
-                        rdfs:label &quot;Seneca, Lucius Annaeus&quot;^^xsd:string ;
-                        owl:sameAs &lt;http://viaf.org/viaf/90637919&gt; .
-                 }
+                <div id="cs_trig_snippet" style="max-height:70vh; overflow-y:scroll;"></div>
             </code></pre>
 
             <h2>A graphical representation of the case study</h2>
+            <p>Powered by <a href="https://essepuntato.it/graffoo/">Grafoo</a></p>
 
             <img src="datamodel-imgs/example449.svg">
         
-            <p>Below an alternative visualisation of the case study is presented with Brick-Studio online tool</p>
+            <h2>Below an alternative visualisation of the case study</h2>
+            <p>Powered by <a href="https://github.com/BrickSchema/brick-studio">Brick-Studio</a></p>
             <iframe src="brick-studio-master/index.html" title="brick-studio-examples" frameborder="0" width="100%" height="700rem"></iframe>
 
 
@@ -364,6 +216,14 @@
                 </div>
             </div> 
           </footer>
+
+          <script>$.get('brick-studio-master/prova.trig', function(data) {
+            var s = String(data).replaceAll('<', ' &lt;').replaceAll('>', '&gt;');
+            document.getElementById('cs_trig_snippet').innerHTML = s;
+            
+        });</script>
+
+
 		<!-- Bootstrap core JavaScript -->
 		<script src="vendor/jquery/jquery.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
